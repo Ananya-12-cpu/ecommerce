@@ -16,19 +16,19 @@
       "id": "3",
       "name": "Bluetooth Speaker",
       "price": 25.0,
-      "imageUrl": "https://unsplash.com/photos/black-and-silver-portable-speaker-S0B-pmGjdVA"
+      "imageUrl": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=1936"
     },
     {
       "id": "4",
       "name": "Gaming Mouse",
       "price": 32.5,
-      "imageUrl": "https://unsplash.com/photos/black-and-yellow-gaming-mouse-Soh2aeqILLU"
+      "imageUrl": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?q=80&w=2070"
     },
     {
       "id": "5",
       "name": "Mechanical Keyboard",
       "price": 40.0,
-      "imageUrl": "https://unsplash.com/photos/yellow-and-white-keyboard-on-blue-and-white-surface-ZRoC_96HPnw"
+      "imageUrl": "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=2080"
     }
     
   ],
@@ -37,31 +37,31 @@
       "id": "1",
       "name": "Casual T-Shirt",
       "price": 11.5,
-      "imageUrl": "https://unsplash.com/photos/a-woman-standing-with-her-hands-in-her-pockets-KmzD1q7ueRg"
+      "imageUrl": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2080"
     },
     {
       "id": "2",
       "name": "Summer Dress",
       "price": 19.0,
-      "imageUrl": "https://unsplash.com/photos/a-woman-in-a-yellow-dress-leaning-against-a-wall-2RYAWR9KrOs"
+      "imageUrl": "https://images.unsplash.com/photo-1612336307429-8a898d10e223?q=80&w=1974"
     },
     {
       "id": "3",
       "name": "Denim Jacket",
       "price": 26.5,
-      "imageUrl": "https://unsplash.com/photos/man-in-blue-denim-jacket-wearing-black-knit-cap-weia3bEeYKU"
+      "imageUrl": "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=2070"
     },
     {
       "id": "4",
       "name": "Hoodie",
       "price": 34.0,
-      "imageUrl": "https://unsplash.com/photos/a-woman-wearing-a-green-hoodie-with-a-butterfly-on-it-ggcJKGpx3pI"
+      "imageUrl": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=1974"
     },
     {
       "id": "5",
       "name": "Formal Shirt",
       "price": 41.5,
-      "imageUrl": "https://unsplash.com/photos/black-and-orange-nike-polo-shirt-N0ke5zChVBU"
+      "imageUrl": "https://images.unsplash.com/photo-1598033129183-c4f50c736f10?q=80&w=1925"
     }
    
   ],
@@ -70,31 +70,31 @@
       "id": "1",
       "name": "Ceramic Vase",
       "price": 13.0,
-      "imageUrl": "https://unsplash.com/photos/a-green-vase-with-yellow-flowers-in-it-wYlEzCsfZDk"
+      "imageUrl": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?q=80&w=1945"
     },
     {
       "id": "2",
       "name": "Throw Pillow",
       "price": 20.5,
-      "imageUrl": "https://unsplash.com/photos/brown-wooden-framed-white-floral-cushion-armchair-80xePqQVKzs"
+      "imageUrl": "https://images.unsplash.com/photo-1584100936595-c0655b7eb4ea?q=80&w=2070"
     },
     {
       "id": "3",
       "name": "Wall Art",
       "price": 28.0,
-      "imageUrl": "https://unsplash.com/photos/a-living-room-with-a-couch-and-a-painting-on-the-wall-5Eb3MwDvlTg"
+      "imageUrl": "https://images.unsplash.com/photo-1579783901586-d88db74b4fe4?q=80&w=1936"
     },
     {
       "id": "4",
       "name": "Table Lamp",
       "price": 35.5,
-      "imageUrl": "https://unsplash.com/photos/white-table-lamp-mNXTZu7AeGA"
+      "imageUrl": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?q=80&w=1974"
     },
     {
       "id": "5",
       "name": "Cozy Blanket",
       "price": 43.0,
-      "imageUrl": "https://unsplash.com/photos/a-candle-and-a-book-on-a-chair-L4Ia_dBBPWo"
+      "imageUrl": "https://images.unsplash.com/photo-1584100936595-c0655b7eb4ea?q=80&w=2070"
     }
   ],
   "Sports & Outdoors": [
@@ -102,31 +102,31 @@
       "id": "1",
       "name": "Yoga Mat",
       "price": 14.5,
-      "imageUrl": "https://unsplash.com/photos/black-and-white-speakers-on-white-shelf-biX8sBfNcPc"
+      "imageUrl": "https://images.unsplash.com/photo-1592432678016-e910b452f9a2?q=80&w=2070"
     },
     {
       "id": "2",
       "name": "Running Shoes",
       "price": 22.0,
-      "imageUrl": "https://unsplash.com/photos/person-in-white-nike-sneakers-A4579vLezz8"
+      "imageUrl": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070"
     },
     {
       "id": "3",
       "name": "Camping Tent",
       "price": 29.5,
-      "imageUrl": "https://unsplash.com/photos/brown-dome-tent-near-trees-at-night-8f_VQ3EFbTg"
+      "imageUrl": "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=2070"
     },
     {
       "id": "4",
       "name": "Hiking Backpack",
       "price": 37.0,
-      "imageUrl": "https://unsplash.com/photos/black-backpack-on-brown-and-white-rock-4btkgXWSGJA"
+      "imageUrl": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=1974"
     },
     {
       "id": "5",
       "name": "Dumbbell Set",
       "price": 44.5,
-      "imageUrl": "https://unsplash.com/photos/black-and-gray-dumbbells-on-brown-wooden-crate-BBR_zigEmyQ"
+      "imageUrl": "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070"
     }
   ],
   "Health & Beauty": [
@@ -134,31 +134,31 @@
       "id": "1",
       "name": "Face Moisturizer",
       "price": 16.0,
-      "imageUrl": "https://unsplash.com/photos/curology-softube-X1sIr53DhzA"
+      "imageUrl": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1974"
     },
     {
       "id": "2",
       "name": "Lip Balm",
       "price": 23.5,
-      "imageUrl": "https://unsplash.com/photos/a-tin-of-lip-balm-next-to-a-flower-59qh0Sdjn-Y"
+      "imageUrl": "https://images.unsplash.com/photo-1583241475880-683d3a0f14b9?q=80&w=1974"
     },
     {
       "id": "3",
       "name": "Essential Oils",
       "price": 31.0,
-      "imageUrl": "https://unsplash.com/photos/brown-glass-bottle-on-brown-textile-jbjmimlaC-U"
+      "imageUrl": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=1974"
     },
     {
       "id": "4",
       "name": "Shampoo & Conditioner",
       "price": 38.5,
-      "imageUrl": "https://unsplash.com/photos/three-bottles-of-shampoo-and-lotion-in-a-box-QlncuMJfM5I"
+      "imageUrl": "https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?q=80&w=1974"
     },
     {
       "id": "5",
       "name": "Sunscreen Lotion",
       "price": 46.0,
-      "imageUrl": "https://unsplash.com/photos/a-bottle-of-sunscreen-lotion-sitting-on-a-towel-hQSGWjz6-QY"
+      "imageUrl": "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=1974"
     }
   ]
 }

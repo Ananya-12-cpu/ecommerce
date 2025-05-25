@@ -1,25 +1,12 @@
 'use client'
 
+import { Heart } from 'lucide-react';
 import Image from 'next/image'  
 import { useRouter } from 'next/navigation';
+import productData from '../ProductArray.json';
 
-export default function Home() {
+export default function Home() { 
   const router=useRouter()
-
-const getProductByCategory=(category:string)=>{
-  try {
-    // Convert category to lowercase and replace spaces with hyphens
-    const formattedCategory = category.toLowerCase().replace(/\s+/g, '-');
-    router.push(`/${category}`);
-  } catch (error) {
-    console.error('Error navigating to category:', error);
-  }
-}
-  // const getProductByCategory = (category: string) => {
-  //   const formattedCategory = category.toLowerCase().replace(/\s+/g, '-');
-  //   router.push(`/${formattedCategory}`);
-  // }
-
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -41,100 +28,40 @@ const getProductByCategory=(category:string)=>{
         </div>
       </section>
 
-      {/* Featured Products Section */}
-      <section className="max-w-7xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold mb-8">Featured Products</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Product Card */}
-          {[
-            {
-              name: "Premium Headphones",
-              price: 199.99,
-              image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2070"
-            },
-            {
-              name: "Smart Watch",
-              price: 299.99,
-              image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1999"
-            },
-            {
-              name: "Running Shoes",
-              price: 89.99,
-              image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=2070"
-            },
-            {
-              name: "Coffee Maker",
-              price: 79.99,
-              image: "https://images.unsplash.com/photo-1570486916328-1b2ae2d7d398?q=80&w=2070"
-            }
-          ].map((product, index) => (
-            <div key={index} className="group"
-            
-            
-            >
-              <div className="aspect-square relative overflow-hidden rounded-lg bg-gray-100">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition"
-                />
-              </div>
-              <div className="mt-4">
-                <button onClick={() => getProductByCategory(product.name)}> </button>
-                <h3 className="text-lg font-semibold"   >{product.name}</h3>
-                <p className="text-gray-600">${product.price.toFixed(2)}</p>
-                <button className="mt-2 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
-                  Add to Cart
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Categories Section */}
-      <section className="bg-gray-100 py-16">
-        <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8 text-gray-600">Shop by Category</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                name: 'Electronics',
-                image: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=2070',
-                category:"Electronics"
-              },
-              {
-                name: 'Clothing',
-                image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2071',
-                category:"Clothing"
-              },
-              {
-                name: 'Home & Living',
-                image: 'https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=2074',
-                category:"Home & Living"
-              }
-            ].map((category) => (
-              <div key={category.name} className="relative h-64 rounded-lg overflow-hidden group"
-              
-              onClick={()=>getProductByCategory(category.category)}
-              >
-                <Image
-                  src={category.image}
-                  alt={category.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition "
-                  
-                />
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <h3 className="text-white text-2xl font-bold">{category.name}</h3>
+      {Object.entries(productData).map(([category, products]) => (
+        <section key={category} className="py-16 px-4 md:px-8">
+          <h2 className="text-3xl font-bold mb-8">{category}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {products.map((product) => (
+              <div key={product.id} className="group">
+                <div className="aspect-square relative overflow-hidden rounded-lg bg-gray-100"
+                onClick={()=>router.push(`/${product.id}`)}
+                
+                >
+                  <Image
+                    src={product.imageUrl}
+                    alt={product.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition"
+                  />
+                  {/* <button className="absolute top-2 right-2 p-2 rounded-full bg-white/80 hover:bg-white transition">
+                    <Heart className="h-5 w-5 text-gray-600" />
+                  </button> */}
                 </div>
+                {/* <div className="mt-4">
+                  <h3 className="text-lg font-semibold mt-1">{product.name}</h3>
+                  <p className="text-gray-600 mt-1">$ {product.price.toFixed(2)}</p>
+                  <button className="mt-2 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
+                    Add to Cart
+                  </button>
+                </div> */}
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
     </main>
   )
 }
