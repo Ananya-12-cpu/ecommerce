@@ -1,7 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ProductCard from '@/components/ProductCard'
+import ProductArray from '@/ProductArray.json'
+import { usePathname } from 'next/navigation'
 
 // Mock data - In a real app, this would come from an API
 const products = [
@@ -36,18 +38,32 @@ const products = [
 ]
 
 export default function ProductsPage() {
+    const params = usePathname();
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [sortBy, setSortBy] = useState('featured')
 
-  const filteredProducts = products.filter(product => 
-    selectedCategory === 'all' ? true : product.category === selectedCategory
-  )
+  // const filteredProducts = products.filter(product => 
+  //   selectedCategory === 'all' ? true : product.category === selectedCategory
+  // )
 
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
-    if (sortBy === 'price-low') return a.price - b.price
-    if (sortBy === 'price-high') return b.price - a.price
-    return 0
-  })
+  // const sortedProducts = [...filteredProducts].sort((a, b) => {
+  //   if (sortBy === 'price-low') return a.price - b.price
+  //   if (sortBy === 'price-high') return b.price - a.price
+  //   return 0
+  // })
+
+    const [products, setProducts] = useState<any[]>([]);
+    const [category, setCategory] = useState<string>('');
+  
+    useEffect(() => {
+      // Extract category from pathname (remove leading slash)
+      const categoryFromPath = params.slice(1);
+      setCategory(categoryFromPath);
+  
+      // Get products for the category
+      const categoryProducts = ProductArray[categoryFromPath as keyof typeof ProductArray] || [];
+      setProducts(categoryProducts);
+    }, [params]);
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -77,7 +93,7 @@ export default function ProductsPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {sortedProducts.map((product) => (
+        {products.map((product) => (
           <ProductCard key={product.id} {...product} />
         ))}
       </div>

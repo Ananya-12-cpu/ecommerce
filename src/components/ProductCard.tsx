@@ -7,20 +7,20 @@ interface ProductCardProps {
   id: string
   name: string
   price: number
-  image: string
+  imageUrl: string
   category: string
 }
 
-export default function ProductCard({ id, name, price, image, category }: ProductCardProps) {
+export default function ProductCard({ id, name, price, imageUrl, category }: ProductCardProps) {
   return (
     <div className="group">
       <div className="aspect-square relative overflow-hidden rounded-lg bg-gray-100">
-        <Image
-          src={image}
+        <img         
+          src={imageUrl}
           alt={name}
-          fill
-          className="object-cover group-hover:scale-105 transition"
+          className="object-cover group-hover:scale-105 transition"        
         />
+        <p className='text-black'>{imageUrl}</p>
         <button className="absolute top-2 right-2 p-2 rounded-full bg-white/80 hover:bg-white transition">
           <Heart className="h-5 w-5 text-gray-600" />
         </button>

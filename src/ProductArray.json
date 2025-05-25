@@ -2,461 +2,163 @@
   "Electronics": [
     {
       "id": "1",
-      "name": "Product 1",
+      "name": "Wireless Headphones",
       "price": 10.0,
-      "image": "https://picsum.photos/id/1/500/500"
+      "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2070"
     },
     {
       "id": "2",
-      "name": "Product 6",
+      "name": "Smartwatch",
       "price": 17.5,
-      "image": "https://picsum.photos/id/2/500/500"
+      "imageUrl": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1999"
     },
     {
       "id": "3",
-      "name": "Product 11",
+      "name": "Bluetooth Speaker",
       "price": 25.0,
-      "image": "https://picsum.photos/id/3/500/500"
+      "imageUrl": "https://unsplash.com/photos/black-and-silver-portable-speaker-S0B-pmGjdVA"
     },
     {
       "id": "4",
-      "name": "Product 16",
+      "name": "Gaming Mouse",
       "price": 32.5,
-      "image": "https://picsum.photos/id/4/500/500"
+      "imageUrl": "https://unsplash.com/photos/black-and-yellow-gaming-mouse-Soh2aeqILLU"
     },
     {
       "id": "5",
-      "name": "Product 21",
+      "name": "Mechanical Keyboard",
       "price": 40.0,
-      "image": "https://picsum.photos/id/5/500/500"
-    },
-    {
-      "id": "6",
-      "name": "Product 26",
-      "price": 47.5,
-      "image": "https://picsum.photos/id/6/500/500"
-    },
-    {
-      "id": "7",
-      "name": "Product 31",
-      "price": 55.0,
-      "image": "https://picsum.photos/id/7/500/500"
-    },
-    {
-      "id": "8",
-      "name": "Product 36",
-      "price": 62.5,
-      "image": "https://picsum.photos/id/8/500/500"
-    },
-    {
-      "id": "9",
-      "name": "Product 41",
-      "price": 70.0,
-      "image": "https://picsum.photos/id/9/500/500"
-    },
-    {
-      "id": "10",
-      "name": "Product 46",
-      "price": 77.5,
-      "image": "https://picsum.photos/id/10/500/500"
-    },
-    {
-      "id": "11",
-      "name": "Product 51",
-      "price": 85.0,
-      "image": "https://picsum.photos/id/11/500/500"
-    },
-    {
-      "id": "12",
-      "name": "Product 56",
-      "price": 92.5,
-      "image": "https://picsum.photos/id/12/500/500"
-    },
-    {
-      "id": "13",
-      "name": "Product 61",
-      "price": 100.0,
-      "image": "https://picsum.photos/id/13/500/500"
-    },
-    {
-      "id": "14",
-      "name": "Product 66",
-      "price": 107.5,
-      "image": "https://picsum.photos/id/14/500/500"
-    },
-    {
-      "id": "15",
-      "name": "Product 71",
-      "price": 115.0,
-      "image": "https://picsum.photos/id/15/500/500"
+      "imageUrl": "https://unsplash.com/photos/yellow-and-white-keyboard-on-blue-and-white-surface-ZRoC_96HPnw"
     }
+    
   ],
   "Clothing": [
     {
       "id": "1",
-      "name": "Product 2",
+      "name": "Casual T-Shirt",
       "price": 11.5,
-      "image": "https://picsum.photos/id/16/500/500"
+      "imageUrl": "https://unsplash.com/photos/a-woman-standing-with-her-hands-in-her-pockets-KmzD1q7ueRg"
     },
     {
       "id": "2",
-      "name": "Product 7",
+      "name": "Summer Dress",
       "price": 19.0,
-      "image": "https://picsum.photos/id/17/500/500"
+      "imageUrl": "https://unsplash.com/photos/a-woman-in-a-yellow-dress-leaning-against-a-wall-2RYAWR9KrOs"
     },
     {
       "id": "3",
-      "name": "Product 12",
+      "name": "Denim Jacket",
       "price": 26.5,
-      "image": "https://picsum.photos/id/18/500/500"
+      "imageUrl": "https://unsplash.com/photos/man-in-blue-denim-jacket-wearing-black-knit-cap-weia3bEeYKU"
     },
     {
       "id": "4",
-      "name": "Product 17",
+      "name": "Hoodie",
       "price": 34.0,
-      "image": "https://picsum.photos/id/19/500/500"
+      "imageUrl": "https://unsplash.com/photos/a-woman-wearing-a-green-hoodie-with-a-butterfly-on-it-ggcJKGpx3pI"
     },
     {
       "id": "5",
-      "name": "Product 22",
+      "name": "Formal Shirt",
       "price": 41.5,
-      "image": "https://picsum.photos/id/20/500/500"
-    },
-    {
-      "id": "6",
-      "name": "Product 27",
-      "price": 49.0,
-      "image": "https://picsum.photos/id/21/500/500"
-    },
-    {
-      "id": "7",
-      "name": "Product 32",
-      "price": 56.5,
-      "image": "https://picsum.photos/id/22/500/500"
-    },
-    {
-      "id": "8",
-      "name": "Product 37",
-      "price": 64.0,
-      "image": "https://picsum.photos/id/23/500/500"
-    },
-    {
-      "id": "9",
-      "name": "Product 42",
-      "price": 71.5,
-      "image": "https://picsum.photos/id/24/500/500"
-    },
-    {
-      "id": "10",
-      "name": "Product 47",
-      "price": 79.0,
-      "image": "https://picsum.photos/id/25/500/500"
-    },
-    {
-      "id": "11",
-      "name": "Product 52",
-      "price": 86.5,
-      "image": "https://picsum.photos/id/26/500/500"
-    },
-    {
-      "id": "12",
-      "name": "Product 57",
-      "price": 94.0,
-      "image": "https://picsum.photos/id/27/500/500"
-    },
-    {
-      "id": "13",
-      "name": "Product 62",
-      "price": 101.5,
-      "image": "https://picsum.photos/id/28/500/500"
-    },
-    {
-      "id": "14",
-      "name": "Product 67",
-      "price": 109.0,
-      "image": "https://picsum.photos/id/29/500/500"
-    },
-    {
-      "id": "15",
-      "name": "Product 72",
-      "price": 116.5,
-      "image": "https://picsum.photos/id/30/500/500"
+      "imageUrl": "https://unsplash.com/photos/black-and-orange-nike-polo-shirt-N0ke5zChVBU"
     }
+   
   ],
   "Home & Living": [
     {
       "id": "1",
-      "name": "Product 3",
+      "name": "Ceramic Vase",
       "price": 13.0,
-      "image": "https://picsum.photos/id/31/500/500"
+      "imageUrl": "https://unsplash.com/photos/a-green-vase-with-yellow-flowers-in-it-wYlEzCsfZDk"
     },
     {
       "id": "2",
-      "name": "Product 8",
+      "name": "Throw Pillow",
       "price": 20.5,
-      "image": "https://picsum.photos/id/32/500/500"
+      "imageUrl": "https://unsplash.com/photos/brown-wooden-framed-white-floral-cushion-armchair-80xePqQVKzs"
     },
     {
       "id": "3",
-      "name": "Product 13",
+      "name": "Wall Art",
       "price": 28.0,
-      "image": "https://picsum.photos/id/33/500/500"
+      "imageUrl": "https://unsplash.com/photos/a-living-room-with-a-couch-and-a-painting-on-the-wall-5Eb3MwDvlTg"
     },
     {
       "id": "4",
-      "name": "Product 18",
+      "name": "Table Lamp",
       "price": 35.5,
-      "image": "https://picsum.photos/id/34/500/500"
+      "imageUrl": "https://unsplash.com/photos/white-table-lamp-mNXTZu7AeGA"
     },
     {
       "id": "5",
-      "name": "Product 23",
+      "name": "Cozy Blanket",
       "price": 43.0,
-      "image": "https://picsum.photos/id/35/500/500"
-    },
-    {
-      "id": "6",
-      "name": "Product 28",
-      "price": 50.5,
-      "image": "https://picsum.photos/id/36/500/500"
-    },
-    {
-      "id": "7",
-      "name": "Product 33",
-      "price": 58.0,
-      "image": "https://picsum.photos/id/37/500/500"
-    },
-    {
-      "id": "8",
-      "name": "Product 38",
-      "price": 65.5,
-      "image": "https://picsum.photos/id/38/500/500"
-    },
-    {
-      "id": "9",
-      "name": "Product 43",
-      "price": 73.0,
-      "image": "https://picsum.photos/id/39/500/500"
-    },
-    {
-      "id": "10",
-      "name": "Product 48",
-      "price": 80.5,
-      "image": "https://picsum.photos/id/40/500/500"
-    },
-    {
-      "id": "11",
-      "name": "Product 53",
-      "price": 88.0,
-      "image": "https://picsum.photos/id/41/500/500"
-    },
-    {
-      "id": "12",
-      "name": "Product 58",
-      "price": 95.5,
-      "image": "https://picsum.photos/id/42/500/500"
-    },
-    {
-      "id": "13",
-      "name": "Product 63",
-      "price": 103.0,
-      "image": "https://picsum.photos/id/43/500/500"
-    },
-    {
-      "id": "14",
-      "name": "Product 68",
-      "price": 110.5,
-      "image": "https://picsum.photos/id/44/500/500"
-    },
-    {
-      "id": "15",
-      "name": "Product 73",
-      "price": 118.0,
-      "image": "https://picsum.photos/id/45/500/500"
+      "imageUrl": "https://unsplash.com/photos/a-candle-and-a-book-on-a-chair-L4Ia_dBBPWo"
     }
   ],
   "Sports & Outdoors": [
     {
       "id": "1",
-      "name": "Product 4",
+      "name": "Yoga Mat",
       "price": 14.5,
-      "image": "https://picsum.photos/id/46/500/500"
+      "imageUrl": "https://unsplash.com/photos/black-and-white-speakers-on-white-shelf-biX8sBfNcPc"
     },
     {
       "id": "2",
-      "name": "Product 9",
+      "name": "Running Shoes",
       "price": 22.0,
-      "image": "https://picsum.photos/id/47/500/500"
+      "imageUrl": "https://unsplash.com/photos/person-in-white-nike-sneakers-A4579vLezz8"
     },
     {
       "id": "3",
-      "name": "Product 14",
+      "name": "Camping Tent",
       "price": 29.5,
-      "image": "https://picsum.photos/id/48/500/500"
+      "imageUrl": "https://unsplash.com/photos/brown-dome-tent-near-trees-at-night-8f_VQ3EFbTg"
     },
     {
       "id": "4",
-      "name": "Product 19",
+      "name": "Hiking Backpack",
       "price": 37.0,
-      "image": "https://picsum.photos/id/49/500/500"
+      "imageUrl": "https://unsplash.com/photos/black-backpack-on-brown-and-white-rock-4btkgXWSGJA"
     },
     {
       "id": "5",
-      "name": "Product 24",
+      "name": "Dumbbell Set",
       "price": 44.5,
-      "image": "https://picsum.photos/id/50/500/500"
-    },
-    {
-      "id": "6",
-      "name": "Product 29",
-      "price": 52.0,
-      "image": "https://picsum.photos/id/51/500/500"
-    },
-    {
-      "id": "7",
-      "name": "Product 34",
-      "price": 59.5,
-      "image": "https://picsum.photos/id/52/500/500"
-    },
-    {
-      "id": "8",
-      "name": "Product 39",
-      "price": 67.0,
-      "image": "https://picsum.photos/id/53/500/500"
-    },
-    {
-      "id": "9",
-      "name": "Product 44",
-      "price": 74.5,
-      "image": "https://picsum.photos/id/54/500/500"
-    },
-    {
-      "id": "10",
-      "name": "Product 49",
-      "price": 82.0,
-      "image": "https://picsum.photos/id/55/500/500"
-    },
-    {
-      "id": "11",
-      "name": "Product 54",
-      "price": 89.5,
-      "image": "https://picsum.photos/id/56/500/500"
-    },
-    {
-      "id": "12",
-      "name": "Product 59",
-      "price": 97.0,
-      "image": "https://picsum.photos/id/57/500/500"
-    },
-    {
-      "id": "13",
-      "name": "Product 64",
-      "price": 104.5,
-      "image": "https://picsum.photos/id/58/500/500"
-    },
-    {
-      "id": "14",
-      "name": "Product 69",
-      "price": 112.0,
-      "image": "https://picsum.photos/id/59/500/500"
-    },
-    {
-      "id": "15",
-      "name": "Product 74",
-      "price": 119.5,
-      "image": "https://picsum.photos/id/60/500/500"
+      "imageUrl": "https://unsplash.com/photos/black-and-gray-dumbbells-on-brown-wooden-crate-BBR_zigEmyQ"
     }
   ],
   "Health & Beauty": [
     {
       "id": "1",
-      "name": "Product 5",
+      "name": "Face Moisturizer",
       "price": 16.0,
-      "image": "https://picsum.photos/id/61/500/500"
+      "imageUrl": "https://unsplash.com/photos/curology-softube-X1sIr53DhzA"
     },
     {
       "id": "2",
-      "name": "Product 10",
+      "name": "Lip Balm",
       "price": 23.5,
-      "image": "https://picsum.photos/id/62/500/500"
+      "imageUrl": "https://unsplash.com/photos/a-tin-of-lip-balm-next-to-a-flower-59qh0Sdjn-Y"
     },
     {
       "id": "3",
-      "name": "Product 15",
+      "name": "Essential Oils",
       "price": 31.0,
-      "image": "https://picsum.photos/id/63/500/500"
+      "imageUrl": "https://unsplash.com/photos/brown-glass-bottle-on-brown-textile-jbjmimlaC-U"
     },
     {
       "id": "4",
-      "name": "Product 20",
+      "name": "Shampoo & Conditioner",
       "price": 38.5,
-      "image": "https://picsum.photos/id/64/500/500"
+      "imageUrl": "https://unsplash.com/photos/three-bottles-of-shampoo-and-lotion-in-a-box-QlncuMJfM5I"
     },
     {
       "id": "5",
-      "name": "Product 25",
+      "name": "Sunscreen Lotion",
       "price": 46.0,
-      "image": "https://picsum.photos/id/65/500/500"
-    },
-    {
-      "id": "6",
-      "name": "Product 30",
-      "price": 53.5,
-      "image": "https://picsum.photos/id/66/500/500"
-    },
-    {
-      "id": "7",
-      "name": "Product 35",
-      "price": 61.0,
-      "image": "https://picsum.photos/id/67/500/500"
-    },
-    {
-      "id": "8",
-      "name": "Product 40",
-      "price": 68.5,
-      "image": "https://picsum.photos/id/68/500/500"
-    },
-    {
-      "id": "9",
-      "name": "Product 45",
-      "price": 76.0,
-      "image": "https://picsum.photos/id/69/500/500"
-    },
-    {
-      "id": "10",
-      "name": "Product 50",
-      "price": 83.5,
-      "image": "https://picsum.photos/id/70/500/500"
-    },
-    {
-      "id": "11",
-      "name": "Product 55",
-      "price": 91.0,
-      "image": "https://picsum.photos/id/71/500/500"
-    },
-    {
-      "id": "12",
-      "name": "Product 60",
-      "price": 98.5,
-      "image": "https://picsum.photos/id/72/500/500"
-    },
-    {
-      "id": "13",
-      "name": "Product 65",
-      "price": 106.0,
-      "image": "https://picsum.photos/id/73/500/500"
-    },
-    {
-      "id": "14",
-      "name": "Product 70",
-      "price": 113.5,
-      "image": "https://picsum.photos/id/74/500/500"
-    },
-    {
-      "id": "15",
-      "name": "Product 75",
-      "price": 121.0,
-      "image": "https://picsum.photos/id/75/500/500"
+      "imageUrl": "https://unsplash.com/photos/a-bottle-of-sunscreen-lotion-sitting-on-a-towel-hQSGWjz6-QY"
     }
   ]
 }

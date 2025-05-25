@@ -1,6 +1,25 @@
-import Image from 'next/image'
+'use client'
+
+import Image from 'next/image'  
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+  const router=useRouter()
+
+const getProductByCategory=(category:string)=>{
+  try {
+    // Convert category to lowercase and replace spaces with hyphens
+    const formattedCategory = category.toLowerCase().replace(/\s+/g, '-');
+    router.push(`/${category}`);
+  } catch (error) {
+    console.error('Error navigating to category:', error);
+  }
+}
+  // const getProductByCategory = (category: string) => {
+  //   const formattedCategory = category.toLowerCase().replace(/\s+/g, '-');
+  //   router.push(`/${formattedCategory}`);
+  // }
+
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -49,7 +68,10 @@ export default function Home() {
               image: "https://images.unsplash.com/photo-1570486916328-1b2ae2d7d398?q=80&w=2070"
             }
           ].map((product, index) => (
-            <div key={index} className="group">
+            <div key={index} className="group"
+            
+            
+            >
               <div className="aspect-square relative overflow-hidden rounded-lg bg-gray-100">
                 <Image
                   src={product.image}
@@ -59,7 +81,8 @@ export default function Home() {
                 />
               </div>
               <div className="mt-4">
-                <h3 className="text-lg font-semibold">{product.name}</h3>
+                <button onClick={() => getProductByCategory(product.name)}> </button>
+                <h3 className="text-lg font-semibold"   >{product.name}</h3>
                 <p className="text-gray-600">${product.price.toFixed(2)}</p>
                 <button className="mt-2 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">
                   Add to Cart
@@ -73,28 +96,35 @@ export default function Home() {
       {/* Categories Section */}
       <section className="bg-gray-100 py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-8">Shop by Category</h2>
+          <h2 className="text-3xl font-bold mb-8 text-gray-600">Shop by Category</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
                 name: 'Electronics',
-                image: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=2070'
+                image: 'https://images.unsplash.com/photo-1498049794561-7780e7231661?q=80&w=2070',
+                category:"Electronics"
               },
               {
                 name: 'Clothing',
-                image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2071'
+                image: 'https://images.unsplash.com/photo-1445205170230-053b83016050?q=80&w=2071',
+                category:"Clothing"
               },
               {
                 name: 'Home & Living',
-                image: 'https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=2074'
+                image: 'https://images.unsplash.com/photo-1484101403633-562f891dc89a?q=80&w=2074',
+                category:"Home & Living"
               }
             ].map((category) => (
-              <div key={category.name} className="relative h-64 rounded-lg overflow-hidden group">
+              <div key={category.name} className="relative h-64 rounded-lg overflow-hidden group"
+              
+              onClick={()=>getProductByCategory(category.category)}
+              >
                 <Image
                   src={category.image}
                   alt={category.name}
                   fill
-                  className="object-cover group-hover:scale-105 transition"
+                  className="object-cover group-hover:scale-105 transition "
+                  
                 />
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition" />
                 <div className="absolute inset-0 flex items-center justify-center">

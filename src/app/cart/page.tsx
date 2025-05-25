@@ -3,6 +3,10 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { Trash2 } from 'lucide-react'
+import { loadStripe } from '@stripe/stripe-js'
+
+// Initialize Stripe
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
 // Mock cart data - In a real app, this would come from a state management solution
 const initialCartItems = [
@@ -24,6 +28,7 @@ const initialCartItems = [
 
 export default function CartPage() {
   const [cartItems, setCartItems] = useState(initialCartItems)
+  const [isLoading, setIsLoading] = useState(false)
 
   const updateQuantity = (id: string, newQuantity: number) => {
     if (newQuantity < 1) return
@@ -44,6 +49,40 @@ export default function CartPage() {
   )
   const shipping = 10
   const total = subtotal + shipping
+
+  const handleCheckout = async () => {
+    try {
+      setIsLoading(true)
+      
+      // Create checkout session
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          items: cartItems,
+          shipping: shipping,
+        }),
+      })
+
+      const { sessionId } = await response.json()
+      
+      // Redirect to Stripe checkout
+      const stripe = await stripePromise
+      const { error } = await stripe!.redirectToCheckout({
+        sessionId,
+      })
+
+      if (error) {
+        console.error('Error:', error)
+      }
+    } catch (err) {
+      console.error('Error:', err)
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
@@ -123,8 +162,12 @@ export default function CartPage() {
                   </div>
                 </div>
               </div>
-              <button className="w-full bg-black text-white py-3 rounded-lg mt-6 hover:bg-gray-800 transition">
-                Proceed to Checkout
+              <button 
+                onClick={handleCheckout}
+                disabled={isLoading}
+                className="w-full bg-black text-white py-3 rounded-lg mt-6 hover:bg-gray-800 transition disabled:bg-gray-400"
+              >
+                {isLoading ? 'Processing...' : 'Proceed to Checkout'}
               </button>
             </div>
           </div>
