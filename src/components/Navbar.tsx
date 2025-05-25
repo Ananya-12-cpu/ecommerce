@@ -16,14 +16,14 @@ export default function Navbar() {
           {/* Navigation Links */}
           <div className="hidden md:flex space-x-8">
             <Link href="/categories" className="text-gray-600 hover:text-black">
-              Categories
+              Products
             </Link>
             <Link href="/deals" className="text-gray-600 hover:text-black">
               Deals
             </Link>
-            <Link href="/new-arrivals" className="text-gray-600 hover:text-black">
+            {/* <Link href="/new-arrivals" className="text-gray-600 hover:text-black">
               New Arrivals
-            </Link>
+            </Link> */}
           </div>
 
           {/* Search and Icons */}
