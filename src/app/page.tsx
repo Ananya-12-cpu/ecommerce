@@ -7,6 +7,8 @@ import productData from '../ProductArray.json';
 
 export default function Home() { 
   const router=useRouter()
+
+  
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -36,8 +38,7 @@ export default function Home() {
             {products.map((product) => (
               <div key={product.id} className="group">
                 <div className="aspect-square relative overflow-hidden rounded-lg bg-gray-100"
-                onClick={()=>router.push(`/${product.id}`)}
-                
+                onClick={()=>router.push(`product?category=${category}&productId=${product.id}`)}
                 >
                   <Image
                     src={product.imageUrl}
