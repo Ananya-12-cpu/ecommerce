@@ -1,24 +1,33 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { useSearchParams } from 'next/navigation';
-import productDataArray from '@/ProductArray.json';
-import { useDispatch, useSelector } from 'react-redux';
-import { addMultipleToCart, addToCart } from '../lib/CartCountSlice';
+import React from "react";
+import { useSearchParams } from "next/navigation";
+import productDataArray from "@/ProductArray.json";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../lib/CartCountSlice";
+import { RootState } from "../lib/Store";
 
 export default function ProductPage() {
   const searchParams = useSearchParams();
   const dispatch = useDispatch();
-  const state = useSelector((state: any) => state.items);
+  const cartItems = useSelector((state: RootState) => state.items);
+  const totalQuantity = useSelector((state: RootState) => state.totalQuantity);
+  const totalAmount = useSelector((state: RootState) => state.totalAmount);
 
   const [quantity, setQuantity] = React.useState(1);
 
   type CategoryKey = keyof typeof productDataArray;
-  const categorySlug = searchParams.get('category') as CategoryKey | null;
-  const productSlug = searchParams.get('productId');
+  const categorySlug = searchParams.get("category") as CategoryKey | null;
+  const productSlug = searchParams.get("productId");
 
-  const categoryProducts = categorySlug ? productDataArray[categorySlug] : undefined;
-  const product = categoryProducts?.find((item: any) => item.id === productSlug) || null;
+  const categoryProducts = categorySlug
+    ? productDataArray[categorySlug]
+    : undefined;
+  const product =
+    categoryProducts?.find((item: any) => item.id === productSlug) || null;
+  const isDisabledButton = cartItems.some(
+    (item: any) => item.id === productSlug
+  );
 
   if (!product) {
     return <div>Product not found.</div>;
@@ -29,13 +38,21 @@ export default function ProductPage() {
       id: product.id,
       name: product.name,
       price: product.price,
-      imageUrl: product.imageUrl,
-      // quantity: quantity,
+      image: product.imageUrl,
+      quantity: quantity,
     };
 
-    dispatch(addMultipleToCart([formattedProduct]));
-    console.log('Added to cart:', formattedProduct);
-    console.log('Cart state:', state);
+    // Add items based on quantity
+    for (let i = 0; i < quantity; i++) {
+      dispatch(addToCart(formattedProduct));
+    }
+
+    console.log("Added to cart:", formattedProduct);
+    console.log("Cart state:", {
+      items: cartItems,
+      totalQuantity,
+      totalAmount,
+    });
   };
 
   return (
@@ -52,7 +69,7 @@ export default function ProductPage() {
             {[1, 2, 3, 4].map((i) => (
               <img
                 key={i}
-                 src={`${product.imageUrl}`}
+                src={`${product.imageUrl}`}
                 alt={`Thumbnail ${i}`}
                 className="w-12 h-12 object-cover rounded border cursor-pointer hover:ring-2 ring-yellow-400"
               />
@@ -66,10 +83,14 @@ export default function ProductPage() {
           <div className="flex items-center gap-2">
             <span className="text-yellow-500 font-bold">3.9★</span>
             <span className="text-gray-600">(4,583 ratings)</span>
-            <span className="text-blue-600 underline cursor-pointer">Visit the Store</span>
+            <span className="text-blue-600 underline cursor-pointer">
+              Visit the Store
+            </span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-2xl font-bold text-gray-800">₹{product.price}</span>
+            <span className="text-2xl font-bold text-gray-800">
+              ₹{product.price}
+            </span>
             <span className="text-gray-400 line-through">₹4,999</span>
             <span className="text-green-600 font-semibold">-64%</span>
           </div>
@@ -102,28 +123,49 @@ export default function ProductPage() {
         {/* Right: Purchase Section */}
         <div className="md:w-1/4 bg-gray-100 p-4 rounded-lg flex flex-col gap-4">
           <div>
-            <span className="text-2xl font-bold text-gray-800">₹{product.price}</span>
-            <span className="block text-green-600">FREE delivery Tuesday, 27 May.</span>
-            <span className="block text-gray-600">Or fastest delivery Tomorrow, 26 May.</span>
+            <span className="text-2xl font-bold text-gray-800">
+              ₹{product.price}
+            </span>
+            <span className="block text-green-600">
+              FREE delivery Tuesday, 27 May.
+            </span>
+            <span className="block text-gray-600">
+              Or fastest delivery Tomorrow, 26 May.
+            </span>
           </div>
           <div className="text-green-700 font-semibold">In stock</div>
           <div className="flex flex-col gap-2">
-            <label className="font-semibold text-gray-800">Quantity:</label>
-            <select
-              className="border rounded px-2 py-1"
-              value={quantity}
-              onChange={(e) => setQuantity(parseInt(e.target.value))}
-            >
-              {[1, 2, 3, 4, 5].map((q) => (
-                <option key={q} value={q}>{q}</option>
-              ))}
-            </select>
+            <label className="font-semibold text-gray-800">
+              Quantity:{" "}
+              {isDisabledButton && (
+                <span className="text-gray-800">{quantity}</span>
+              )}
+            </label>
+
+            {!isDisabledButton && (
+              <select
+                className="border rounded px-2 py-1 text-gray-800"
+                value={quantity}
+                onChange={(e) => setQuantity(parseInt(e.target.value))}
+              >
+                {[1, 2, 3, 4, 5,6,7,8,9,10].map((q) => (
+                  <option key={q} value={q}>
+                    {q}
+                  </option>
+                ))}
+              </select>
+            )}
           </div>
           <button
-            className="bg-yellow-400 hover:bg-yellow-500 text-white font-bold py-2 rounded"
+            className={`${
+              isDisabledButton
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-yellow-400 hover:bg-yellow-500 cursor-pointer"
+            } text-white font-bold py-2 rounded`}
+            disabled={isDisabledButton}
             onClick={addToCartHandler}
           >
-            Add to Cart
+            {isDisabledButton ? "Added to Cart" : "Add to Cart"}
           </button>
           <button className="bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 rounded">
             Buy Now

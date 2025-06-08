@@ -2,8 +2,12 @@
 
 import Link from 'next/link'
 import { ShoppingCart, User, Search } from 'lucide-react'
+import { useSelector } from 'react-redux'
+import { RootState } from '@/app/lib/Store'
 
 export default function Navbar() {
+  const cartItems = useSelector((state: RootState) => state.items)
+
   return (
     <nav className="bg-white shadow-sm">
       <div className="max-w-7xl mx-auto px-4">
@@ -42,7 +46,8 @@ export default function Navbar() {
             <Link href="/cart" className="text-gray-600 hover:text-black relative">
               <ShoppingCart className="h-6 w-6" />
               <span className="absolute -top-2 -right-2 bg-black text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                0
+                {/* 0 */}
+                {cartItems.length}
               </span>
             </Link>
           </div>

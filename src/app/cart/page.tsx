@@ -4,51 +4,38 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { Trash2 } from 'lucide-react'
 import { loadStripe } from '@stripe/stripe-js'
+import { useSelector, useDispatch } from 'react-redux'
+import { removeFromCart, updateQuantity } from '../lib/CartCountSlice'
+import type { RootState } from '../lib/Store'
 
 // Initialize Stripe
 const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!)
 
-// Mock cart data - In a real app, this would come from a state management solution
-const initialCartItems = [
-  {
-    id: '1',
-    name: 'Wireless Headphones',
-    price: 199.99,
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e',
-    quantity: 1
-  },
-  {
-    id: '2',
-    name: 'Smart Watch',
-    price: 299.99,
-    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30',
-    quantity: 1
-  }
-]
+interface CartItem {
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+  quantity: number;
+}
 
 export default function CartPage() {
-  const [cartItems, setCartItems] = useState(initialCartItems)
+  const dispatch = useDispatch()
+  const cartItems = useSelector((state: RootState) => state.items)
+  const totalAmount = useSelector((state: RootState) => state.totalAmount)
   const [isLoading, setIsLoading] = useState(false)
 
-  const updateQuantity = (id: string, newQuantity: number) => {
+  const handleUpdateQuantity = (id: string, newQuantity: number) => {
     if (newQuantity < 1) return
-    setCartItems(items =>
-      items.map(item =>
-        item.id === id ? { ...item, quantity: newQuantity } : item
-      )
-    )
+    dispatch(updateQuantity({ id, quantity: newQuantity }))
   }
 
-  const removeItem = (id: string) => {
-    setCartItems(items => items.filter(item => item.id !== id))
+  const handleRemoveItem = (id: string) => {
+    dispatch(removeFromCart(id))
   }
 
-  const subtotal = cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  )
   const shipping = 10
-  const total = subtotal + shipping
+  const total = totalAmount + shipping
 
   const handleCheckout = async () => {
     try {
@@ -96,7 +83,7 @@ export default function CartPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Cart Items */}
           <div className="lg:col-span-2">
-            {cartItems.map((item) => (
+            {cartItems.map((item: CartItem) => (
               <div key={item.id} className="flex items-center gap-4 py-4 border-b">
                 <div className="relative w-24 h-24">
                   <Image
@@ -112,21 +99,21 @@ export default function CartPage() {
                   <div className="flex items-center gap-4 mt-2">
                     <div className="flex items-center border rounded-lg">
                       <button
-                        onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                        onClick={() => handleUpdateQuantity(item.id, item.quantity - 1)}
                         className="px-3 py-1 hover:bg-gray-100"
                       >
                         -
                       </button>
                       <span className="px-3 py-1">{item.quantity}</span>
                       <button
-                        onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        onClick={() => handleUpdateQuantity(item.id, item.quantity + 1)}
                         className="px-3 py-1 hover:bg-gray-100"
                       >
                         +
                       </button>
                     </div>
                     <button
-                      onClick={() => removeItem(item.id)}
+                      onClick={() => handleRemoveItem(item.id)}
                       className="text-red-500 hover:text-red-600"
                     >
                       <Trash2 className="h-5 w-5" />
@@ -149,7 +136,7 @@ export default function CartPage() {
               <div className="space-y-2">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span>${subtotal.toFixed(2)}</span>
+                  <span>${totalAmount.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Shipping</span>
